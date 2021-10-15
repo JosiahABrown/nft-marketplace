@@ -17,6 +17,6 @@ module.exports = {
       url: 'https://polygon-mainnet.infura.io/v3/${projectId}',
       accounts: [privateKey]
     },
-  },
+  },  
   solidity: "0.8.4",
 };

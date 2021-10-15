@@ -28,7 +28,7 @@ contract NFTMarket is ReentrancyGuard {
         bool sold;
     }
 
-    //turns ID integer into MarketItem 
+    //turns ID integer into MarketItem  
     mapping(uint256 => MarketItem) private idToMarketItem;
 
     //this triggers whenever a market item is created
