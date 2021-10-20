@@ -1,4 +1,4 @@
-import { ethers } from 'ethers'
+  import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Web3Modal from "web3modal"
@@ -41,7 +41,7 @@ export default function Home() {
       }
       return item
     }))
-    setNFTs(items)
+    setNfts(items)
     setLoadingState('loaded')
   }
   async function buyNft(nft) {

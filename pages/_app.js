@@ -4,8 +4,8 @@ import Link from 'next/link'
 function Marketplace({ Component, pageProps }) {
   return (
     <div>
-      <nav className="border-b p-6"> //border bottom padding 6
-        <p className="text-4xl font-bold">Metaverse Marketplace</p> //title 
+      <nav className="border-b p-6"> 
+        <p className="text-4xl font-bold">Liberum</p> 
         <div className="flex mt-4">
           <Link href="/">
             <a className="mr-6 text-pink-500">
