@@ -14,7 +14,8 @@ import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
 import Market from '../artifacts/contracts/Market.sol/NFTMarket.json'
 
 export default function CreateItem() {
-  const [fileUrl, setFileUrl] = useState(null) //for ipfs file that the user will upload
+  const [fileUrl, setFileUrl] = useState(null) 
+  //for ipfs file that the user will upload
   const [formInput, updateFormInput] = useState({ price: '', name: '', description: '' })
   const router = useRouter()
 
@@ -35,7 +36,8 @@ export default function CreateItem() {
   }
   async function createMarket() {
     const { name, description, price } = formInput
-    if (!name || !description || !price || !fileUrl) return //if one of these values aren't available, it will return 
+    if (!name || !description || !price || !fileUrl) return 
+    //if one of these values aren't available, it will return 
     //first, upload to IPFS 
     const data = JSON.stringify({
       name, description, image: fileUrl
