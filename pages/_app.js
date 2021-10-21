@@ -9,7 +9,7 @@ function Marketplace({ Component, pageProps }) {
         <div className="flex mt-4">
           <Link href="/">
             <a className="mr-6 text-pink-500">
-              home
+              Home
             </a>
           </Link>
           <Link href="/create-item">
