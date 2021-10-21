@@ -65,7 +65,7 @@ export default function CreateItem() {
     let event = tx.events[0]
     let value = event.args[2]
     let tokenId = value.toNumber()
-    const price = ethers.utils.parseUnits(formInput.price, 'ether')
+    const price = ethers.utils.parseUnits(formInput.price, 'Matic')
   
     // then list the item for sale on the marketplace 
     contract = new ethers.Contract(nftmarketaddress, Market.abi, signer)
