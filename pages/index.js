@@ -1,4 +1,4 @@
-  import { ethers } from 'ethers'
+import { ethers } from 'ethers'
 import { useEffect, useState } from 'react'
 import axios from 'axios'
 import Web3Modal from "web3modal"
@@ -22,13 +22,15 @@ export default function Home() {
     const provider = new ethers.providers.JsonRpcProvider()
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
     const marketContract = new ethers.Contract(nftmarketaddress, Market.abi, provider)
-    const data = await marketContract.fetchMarketItems()//fetchs this function from the smart contract
+    //fetchs this function from the smart contract
+    const data = await marketContract.fetchMarketItems()
 
     /*map over items returned from the contract and 
     and format them as well as fetch their token metadata*/
     const items = await Promise.all(data.map(async i => {
       const tokenUri = await tokenContract.tokenURI(i.tokenId)
-      const meta = await axios.get(tokenUri)//the ipfs address for the NFT
+      //the ipfs address for the NFT
+      const meta = await axios.get(tokenUri)
       let price = ethers.utils.formatUnits(i.price.toString(), 'ether')
       let item = {
         price,
