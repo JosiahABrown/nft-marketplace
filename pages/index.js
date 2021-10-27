@@ -11,6 +11,8 @@ import NFT from '../artifacts/contracts/NFT.sol/NFT.json'
 import Market from '../artifacts/contracts/NFTMarket.sol/NFTMarket.json'
 import { loadDefaultErrorComponents } from 'next/dist/server/load-components'
 
+const nodeAddress = "https://matic-mumbai.chainstacklabs.com";
+
 export default function Home() {
   const [nfts, setNfts] = useState([])
   const [loadingState, setLoadingState] = useState('not-loaded')
@@ -19,10 +21,9 @@ export default function Home() {
   }, [])
   async function loadNFTs() {
     //create a generic provider and query for unsold market items 
-    const provider = new ethers.providers.JsonRpcProvider()
+    const provider = new ethers.providers.JsonRpcProvider(nodeAddress)
     const tokenContract = new ethers.Contract(nftaddress, NFT.abi, provider)
     const marketContract = new ethers.Contract(nftmarketaddress, Market.abi, provider)
-    //fetchs this function from the smart contract
     const data = await marketContract.fetchMarketItems()
 
     /*map over items returned from the contract and 
